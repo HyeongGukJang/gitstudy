@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function write(msg) {
+            document.write(msg+"<br>");
+        }
+
+        var arr = [1,2,3];
+
+        new Promise(function(resolve){
+            write("1.시작!");
+            resolve("성공 => " + arr[2]);
+        })
+        .then(function(successMsg) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    write(successMsg);
+                    resolve();
+                }, 2000);  
+            });
+        })
+        .then(function() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    write("두번째 작업 완료!");
+                    resolve();
+                }, 1000);
+            });
+        })
+        .then(function() {
+            setTimeout(function() {
+                write("세번째 작업 완료!");
+            }, 500);
+        });
+    </script>
+</body>
+</html>

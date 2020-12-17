@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span id="num1">0</span> *
+        <span id="num2">0</span> =
+        <input id="answer" type="text" size="2">
+        <input type="button" id="okbtn" value="확인">
+    </div>
+
+    <div>
+        결과 : <span id="result">정답</span>
+    </div>
+    <script>
+        // 난수 발생기 Math.random()
+        // 1.보다 작은 실수인 난수 생성.
+        // var num = Math.random();
+        // console.log(num);
+        // --------------------------------------------
+
+        // 1~9사이의 난수 발생
+        var num1 = Math.floor(2 + Math.random() * 8);
+        var num2 = Math.floor(2 + Math.random() * 8);
+        var num3 = num1 * num2;
+        // console.log(num1, num2, num1 * num2);
+
+        //DOM 생성
+        var num1El = document.querySelector("#num1");
+        var num2El = document.querySelector("#num2");
+        var okbtn = document.querySelector("#okbtn");
+        var answer = document.querySelector("answer");
+        var result = document.querySelector("#result");
+        // querySelector() = 단수로 하나만 가져오는거
+        // querySelect ALL() = 복수로 여러개 가져오는거
+
+        num1El.innerText = num1;
+        num2El.innerText = num2;
+        okbtn.onclick = function(){
+            // answer 의 값을 num3와 비교해서 결과를 result에 보여준다,
+
+        }
+
+    </script>
+</body>
+
+</html>

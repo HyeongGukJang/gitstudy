@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #head {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1 id="head">별찍기</h1>
+    <hr>
+    <p id="hg"></p>
+    <script>
+        // 과제 1 자바 스크립트로 아래 화면 별찍기
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+
+        for (var i = 0; i <= 4; i++) {
+            for (var j = 0; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        for (var i = 0; i < 5; i++) {
+            for (var j = 3; j >= i; j--) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        // ----------------------------------------
+        var cnt = 1;
+
+        for (var i = 0; i < 9; i++) {
+            for (var j = 0; j < cnt; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+
+            cnt = i<4?cnt+1:cnt-1;
+        }
+
+
+    </script>
+</body>
+
+</html>

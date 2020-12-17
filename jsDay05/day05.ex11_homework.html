@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        #outbox h2 {
+            margin: 0;
+            text-align: center;
+        }
+
+        #outbox button {
+            width: 30px;
+            background-color: gray;
+            margin-left: calc(100% - 40px);
+            margin-top: calc(100% - 420px);
+        }
+
+        #outbox .outbox_content {
+            width: 300px;
+            padding: 20px 10px;
+            background: rgb(224, 216, 216, 0.5);
+        }
+
+        #outbox .outbox_layer {
+            background-color: rgb(194, 182, 182);
+            height: 23px;
+            width: 100%;
+        }
+
+        #outbox {
+            position: absolute;
+            left: 100px;
+            top: 10px;
+        }
+
+        #p{
+            text-align: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.querySelector("#outbox");
+            box.onmousedown = function (event) {
+                this.gapX = event.clientX - this.offsetLeft;
+                this.gapY = event.clientY - this.offsetTop;
+
+                window.onmousemove = function (event2) {
+                    box.style.left = event2.clientX - box.gapX + "px";
+                    box.style.top = event2.clientY - box.gapY + "px";
+                }
+            }
+            window.onmouseup = function (event2) {
+                window.onmousemove = null;
+            }
+
+            function close() {
+                var outbox_close_btn = document.querySelector("#outbox_close_btn");
+                alertBox.style.display = "none";
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+    <img src="07.jpg" alt="Italian Trulli">
+    <div id="outbox">
+        <div class="outbox_layer">
+            <button type="button" id="outbox_close_btn" onclick='window.close()'>X</button>
+        </div>
+        <div class="outbox_content">
+            <h2>공지사항!</h2>
+            <p>내일은 휴강 입니다!</p>
+            <p>수강생 여러분께서는 이점 인지하시어 수업에 착오 없으시길 바랍니다.</p>
+        </div>
+    </div>
+</body>
+
+</html>

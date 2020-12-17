@@ -1,0 +1,9 @@
+javascript기술 
+인공지능 : Tensorflow.js
+크롤링 : requests, soup
+app개발 (크로스플렛폼) : NW.js
+시각화 : Chart.js, D3.js
+서버 : Express
+웹 관련 라이브러 : jQuery, Vue.js, React.js
+웹 프레임워크 : Angular.js
+웹 서버(serverless) : Firebase Functions기술

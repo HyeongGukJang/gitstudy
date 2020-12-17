@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // fish1 부터 finsh5까지를 반복문을 이용해서
+        // 배열처럼 한꺼번에 출력
+        var fish1 = "오징어";
+        var fish2 = "꼴뚜기";
+        var fish3 = "대구";
+        var fish4 = "명태";
+        var fish5 = "거북이";
+        
+        // var obj = {"fish1":"오징어","fish2":"","fish3":"","fish4":"","fish5":""};
+        // document.write(window["fish1"]);
+        // document.write(this["fish1"]);
+
+        for(var i = 1; i<=5; i++){
+            document.write(this["fish"+i] +"<br>");
+            // 여기서 this는 window를 말하는 것이다
+            // 위의 var 변수들은 다 각각의 객체로
+            // 윈도우의 객체가 되니 위처럼 하면 출력된다.
+        }
+
+
+        // window.addEventListener('load', function(){
+        // },true);
+        // var arr = []; // 배열 초기화
+
+        // var obj = {"name1":"홍길동","name2":"김길동","name3":"이길동"}; // 객체(JSON) 초기화
+        // // console.log(obj.name2);
+        // console.log(obj["name1"]); // 연관 배열 MAP구조 방식으로 접근
+        // obj.name4 = "최길동";
+        // obj["name5"] = "강길동";
+        // for(var i = 1; i <= 5; i++){
+        //     document.write(obj["name" + i]+"<br>");
+        // }
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

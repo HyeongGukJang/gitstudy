@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>더하기 계산기</h1>
+    <input id="btn" type="button" value="확인">
+
+
+    <script>
+        // 이벤트 핸들러
+        // btn을 누르면 반응하는 이벤트 핸들러
+        // 스크립트에서 태그를 제어 하기 위해서는 DOM을 사용 한다.
+        // DOM : Document Object Model
+        // 자바스크립트에는 DOM으로 변환 해 주는 함수가 여러개 존재한다.
+        // 제일 기본이 되는게 id 가져오는거 
+        // document.getElementById()
+        // document.getElementByClassName()
+        // document.getElementByTagName()
+        // document.querySelector()
+        // document.querySelectorAll()
+
+        var btn = document.getElementById("btn");
+        // console.log(btn);
+        // console.dir(btn); 
+        function btnEvtHandler(){
+            // 함수 선언은 리턴형 대신 function키워드를 이용한다.
+            console.log("btnEvtHandler함수호출");
+        }
+        // 자바에서는 변수나 속성에 함수를 대입 할 수 있다.
+        // 그러나 자바스크립트는 변수나 속성에 함수 대입 가능.
+        // 변수가 함수를 참조하는거다.
+        // == 함수의 참조변수 생성
+        var reFn = btnEvtHandler;
+        // 참조변수를 이용해서 함수 실행 가능하다.
+        reFn(); // <--- 완전 중요하다!!!!!!
+
+        // onclick 속성에도 함수를 대입 할 수 있다.
+        // 속성과 메소드의 차이는 ()가 있느냐 없느냐의 차이
+        // 속성은 변수랑 같은것
+
+        btn.onclick = btnEvtHandler;  // 함수에 참조값을 넘겨주라는 의미이다.
+        
+        // 함수에 ()를 붙이는것은 무조건 실행이라는 의미이다.
+
+
+        // console.log(typeof btnEvtHandler);
+        // var number = 100;
+        // console.log(typeof number);
+        // console.log(number.toString());
+    </script>
+</body>
+
+</html> 

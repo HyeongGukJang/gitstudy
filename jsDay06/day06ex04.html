@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MKButton {
+            constructor(label) {
+                this.btn = document.createElement("button");
+                this.btn.innerText = label;
+                this.btn.addEventListener('click', () => {
+                    console.log(this);
+                });
+            }
+
+            appendBtn(parentEl) {
+                parentEl.appendChild(this.btn);
+            }
+            
+            clickEvt(callback) {
+                tihs.callback = callback;
+                tihs.callback();
+            }
+        }
+        for (var i = 0; i < 3; i++) {
+            let newBtn = new MKButton("확인");
+            newBtn.appendBtn(document.body); 
+            this.btn.addEventListener('click', function () {
+                console.log(this);
+            });
+            // newBtn.clickEvt(function(){
+            //     console.log(this);
+            // });
+        }
+    </script>
+</body>
+
+</html>

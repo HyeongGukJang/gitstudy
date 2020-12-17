@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day01ex03.html</title>
+    <!-- CDN -->
+    <!-- <scr$ipt src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></scr$ipt> -->
+    <script src = "../../js/jquery.js"></script>
+    <script>
+        $(function() {
+            $('body').css('background','yellow');
+            $('body').append('<h1>Hello JQuery world<h1>');
+            $('#menu li').css({"color":'red',"background":"skyblue"});
+        });
+    </script>
+</head>
+<body>
+    <ul id = "menu">
+        <li>홈</li>
+        <li>프로필</li>
+        <li>갤러리</li>
+        <li>게시판</li>
+        <li>방명록</li>
+    </ul>
+</body>
+</html>

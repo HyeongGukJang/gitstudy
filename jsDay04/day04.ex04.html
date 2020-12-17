@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 콜백 함수는 어떤 기능이 끝났을때 실행 될 함수
+
+        function a(callback) {
+            setTimeout(function () {
+                console.log('a 함수 실행');
+                // a의 기능을 모두 실행하고 callback을 호출한다.
+                // callback 함수를 쓰는 이유는 흐름제어를 위한 것이다.
+                // callback hell (콜백헬) 콜백에서 콜백을 호출하고 또 콜백에서 콜백을 호출하고.... 이러한 상황이 유발 될 수 있다. 
+                // 
+                callback();
+            }, 2000);
+        }
+
+        function b() {
+            setTimeout(function () {
+                console.log('b 함수 실행');
+            }, 1000);
+        }
+
+
+        // a();
+        // b();
+
+        // a의 기능을 모두 처리하고 b가 실행 되도록 한다. 
+        a(b);
+    </script>
+</body>
+
+</html>

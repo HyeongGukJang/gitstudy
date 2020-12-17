@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        function a() {
+            console.log("a함수를 호출합니다리");
+        }
+
+        // a는 함수의 참조값으로 그 함수 자체로 생각해야 한다.
+        // console.log(a);
+
+        // 함수의 이름은 다른 변수의 값으로 대입이 가능하다.
+        // 함수 a를 b에 담았다.
+        // var b = a;
+        // b를 이용해서 a함수를 실행 한다.
+        // b();
+
+        // 다른 함수의 매개변수에 대입이 가능하다.
+        function b(f) {
+            if(typeof f == 'function'){
+                console.log('b함수로 넘겨져 온 다른 함수 실행.');
+                f();
+            }
+        }
+        //  b를 호출 할때 a함수를 인자로 넘겨 주었다.
+        // 다른 함수의 인자로 전달되는 함수를 call back 함수라고 한다.
+        b(a);
+       
+        
+    </script>
+</body>
+
+</html>

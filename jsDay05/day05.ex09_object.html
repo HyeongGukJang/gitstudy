@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+// 자바스크립트에서 객체 생성 방법1: Object 객체 사용
+
+
+        var obj1 = new Object();
+
+        obj1.name = "김길동";
+        obj1.age = "15";
+        obj1.showInfo = function () {
+            console.log(this.name, this.age);
+        }
+
+
+// -------------------------------------------------------
+
+
+        // 자바스크립트 객체 생성 방법2; 리터럴 사용
+        var obj2 = {
+            "name": "장형국",
+            "age": "25",
+            "showInfo": function () {
+                console.log(this.name, this.age);
+            }
+        };
+
+
+// --------------------------------------------------------
+
+
+        // 자바스크립트 객체 생성 방법3 : prototype을 이용
+        function People(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        People.prototype.showInfo = function () {
+            console.log(this.name, this.age);
+        }
+        var obj3 = new People("김비트", "33");
+        // 위에 두가지 방법은 1회용이지만
+        // 이 방법은 같은 구조의 객체를 여러 개 만들 수 있다.
+        // 상속도 가능하다.
+// -------------------------------------------------------
+    
+        function Tank(model, contry, grade){
+            this.model = model;
+            this.contry = contry;
+            this.grade = grade;
+        }
+        Tank.prototype.ShowMe = function(){
+            document.write(this.model, this.contry, this.grade);
+        }
+        let korea = new Tank("흑표","한국","3.5세대");
+        let german = new Tank("레오파트2A7","독일","3.5세대");
+        let russia = new Tank("T-90","러시아","3.5세대");
+
+        korea.ShowMe();
+        german.ShowMe();
+        russia.showMe();
+
+// --------------------------------------------------------
+
+
+        // 자바스크립트 객체 생성 방법 4 : class 사용 (ES6에 추가된 내용)
+        class Man {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            showInfo() {
+                console.log(this.name, this.age);
+            }
+        }
+        var obj4 = new Man("강감찬", 34);
+
+
+// --------------------------------------------------------
+
+
+        class car {
+            constructor(name, year, model) {
+                this.name = name;
+                this.year = year;
+                this.model = model;
+            }
+            Cansee(){
+                document.write(this.name, this.year, this.model);
+            }
+        }
+        let mycar1 = new car("티볼리", 20, "suv");
+        let mycar2 = new car("아반떼cn7", 21, "세단");
+        let mycar3 = new car("베뉴", 19, "suv");
+
+        mycar1.Cansee();
+        mycar2.Cansee();
+        mycar3.Cansee();
+
+
+// ---------------------------------------------------------
+        // console.log(obj1);
+        // console.log(obj2);
+        // console.log(obj3);
+        // console.log(obj4);
+
+        // obj1.showInfo();
+        // obj2.showInfo();
+        // obj3.showInfo();
+        // obj4.showInfo();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        function People(userName, age){
+       
+        }
+        People.prototype.showInfo = function(){
+            document.write("People's showInfo");
+        }
+        function PeopleImpl(userName, phone, age){
+            this.userName = userName;
+            this.age = age;
+            this.phone = phone;
+        }
+        PeopleImpl.prototype = new People();
+        PeopleImpl.constructor = PeopleImpl;
+
+        var p1 = new PeopleImpl("KIM","1111",25);
+        p1.showInfo();
+
+        var list = [
+
+
+
+
+        ];
+
+    </script>
+</body>
+</html>

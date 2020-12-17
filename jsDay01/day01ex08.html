@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>if, eval 을 사용해서 만들어본 계산기2</h1>
+    <hr>
+    <input type="text" id="a" size="5">
+    <input type="text" id="b" size="5"> 
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="X">*</option>
+        <option value="/">/</option>
+
+    </select>
+    <input type="button" id="btn" value="확인">
+    <hr>
+    <!-- 결과를 보여주는 영역 -->
+    <div>결과 : <span id="result"></span></div>
+    <script>
+        var a = document.getElementById("a");
+        var b = document.getElementById("b");
+        var operator = document.getElementById("operator");
+        var btn = document.getElementById("btn");
+        var result = document.getElementById("result");
+
+        btn.onclick = function () {
+            // 자바스크립트에서 형변환 해주는 메소드 number와 String과 boolean
+            // Number()
+            // String()
+            // Boolean()
+            // var c = Number(a.value) + Number(b.value);
+            var aValue = parseInt(a.value);
+            var bValue = parseInt(b.value);
+            var oper = operator.value;
+            
+            if(isNaN(parseInt(aValue))){
+                alert('a를 다시 입력해!!');
+                a.value="";
+                a.focus;
+                return;
+            }
+
+            // Boolean의 결과값 : true, false
+            // 제어문에서 false로 간주 하는것 : 0, NaN, "", null, undefined
+
+            if( isNaN(parseInt(bValue))){
+                alert('b를 다시 입력해!!');
+                b.value="";
+                b.focus;
+                return;
+            }
+
+
+            // if(opValue == '+'){
+            //     var c = aValue + bValue;
+            // }
+            // if(opValue == '-'){
+            //     var c = aValue - bValue;
+            // }
+            // if(opValue == 'X'){
+            //     var c = aValue * bValue;
+            // }
+            // if(opValue == '/'){
+            //     var c = aValue / bValue;
+            // }
+
+            // eval() : 문자열을 수식이나 객체 형태로 바꿔주는 eval함수
+
+            var c = eval(aValue + oper + bValue);
+
+            result.innerHTML = "<strong>" + aValue + operator.value + bValue + "=" + c + "<strong>";
+            a.value = "";
+            b.value = "";
+                // alert('확인 버튼 눌렀다!');
+        }
+    </script>
+</body>
+
+</html>
